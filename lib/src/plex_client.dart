@@ -36,10 +36,17 @@ class PlexClient {
 
   bool get authorized => this._auth.authorized && this.headers.token != null;
 
-  Future<dynamic> getLibrary() async => json.decode(
+  Future<dynamic> getRawRoot() async =>
+      json.decode(((await rawRequest("/")).body as dynamic))["MediaContainer"];
+
+  Future<dynamic> getRawSessions() async =>
+      json.decode(((await rawRequest("/status/sessions")).body as dynamic))[
+          "MediaContainer"];
+
+  Future<dynamic> getRawLibrary() async => json.decode(
       ((await rawRequest("/library")).body as dynamic))["MediaContainer"];
 
-  Future<dynamic> getLibrarySections() async =>
+  Future<dynamic> getRawLibrarySections() async =>
       json.decode(((await rawRequest("/library/sections")).body as dynamic))[
           "MediaContainer"];
 

@@ -46,14 +46,26 @@ void main() {
       expect(auth.authorized, isTrue);
     });
 
-    test('Get Library', () async {
-      dynamic response = await _client.getLibrary();
+    test('Get Raw Root', () async {
+      dynamic response = await _client.getRawRoot();
 
       expect(response, isNotNull);
     });
 
-    test('Get Library Sections', () async {
-      dynamic response = await _client.getLibrarySections();
+    test('Get Raw Sessions', () async {
+      dynamic response = await _client.getRawSessions();
+
+      expect(response, isNotNull);
+    });
+
+    test('Get Raw Library', () async {
+      dynamic response = await _client.getRawLibrary();
+
+      expect(response, isNotNull);
+    });
+
+    test('Get Raw Library Sections', () async {
+      dynamic response = await _client.getRawLibrarySections();
 
       expect(response, isNotNull);
     });
