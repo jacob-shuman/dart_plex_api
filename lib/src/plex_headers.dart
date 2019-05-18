@@ -63,7 +63,7 @@ class PlexHeaders {
     this.accept = "application/json",
   })  : assert(credentials != null),
         assert(clientIdentifier != null && clientIdentifier != "") {
-    this.authorization = credentials.basicAuthHeader;
+    setCredentials(credentials);
   }
 
   void setCredentials(PlexCredentials credentials) =>

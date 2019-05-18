@@ -10,6 +10,7 @@ class PlexClient {
   PlexCredentials credentials;
   PlexHeaders headers;
 
+  // TODO: Hash Password
   PlexClient({
     @required this.host,
     @required this.credentials,
@@ -28,7 +29,7 @@ class PlexClient {
     );
   }
 
-  void authorize() async {
+  Future<void> authorize() async {
     dynamic user = await this._auth.authorize();
 
     this.headers.token = user["authToken"] ?? user["authentication_token"];
