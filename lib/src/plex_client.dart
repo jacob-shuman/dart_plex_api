@@ -51,13 +51,14 @@ class PlexClient {
       json.decode(((await rawRequest("/library/sections")).body as dynamic))[
           "MediaContainer"];
 
+  Uri get requestUri => Uri(
+        scheme: "http",
+        host: this.host,
+        port: 32400,
+      );
+
   Future<http.Response> rawRequest(String route) async => await http.get(
-        Uri(
-          scheme: "http",
-          host: this.host,
-          path: route,
-          port: 32400,
-        ),
+        requestUri.replace(path: route),
         headers: this.headers.toMap(),
       );
 }
