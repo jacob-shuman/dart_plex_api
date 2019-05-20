@@ -1,4 +1,3 @@
-import "dart:convert";
 import "package:meta/meta.dart";
 import "package:http/http.dart" as http;
 import "package:dart_plex_api/dart_plex_api.dart";
@@ -32,10 +31,12 @@ class PlexClient {
     );
   }
 
-  Future<void> authorize() async {
+  Future<PlexClient> authorize() async {
     dynamic user = await this._auth.authorize();
 
     this.headers.token = user["authToken"] ?? user["authentication_token"];
+
+    return this;
   }
 
   bool get authorized => this._auth.authorized && this.headers.token != null;
