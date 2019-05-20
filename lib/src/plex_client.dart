@@ -7,15 +7,18 @@ class PlexClient {
   PlexAuthorization _auth;
 
   String host;
+  int port;
   PlexCredentials credentials;
   PlexHeaders headers;
 
   // TODO: Hash Password
   PlexClient({
     @required this.host,
+    @required this.port,
     @required this.credentials,
     this.headers,
   })  : assert(host != null),
+        assert(port != null),
         assert(credentials != null) {
     if (this.headers == null) {
       this.headers = PlexHeaders.fromCredentials(credentials: this.credentials);
@@ -37,24 +40,24 @@ class PlexClient {
 
   bool get authorized => this._auth.authorized && this.headers.token != null;
 
-  Future<dynamic> getRawRoot() async =>
-      json.decode(((await rawRequest("/")).body as dynamic))["MediaContainer"];
+  // Future<dynamic> getRawRoot() async =>
+  //     json.decode(((await rawRequest("/")).body as dynamic))["MediaContainer"];
 
-  Future<dynamic> getRawSessions() async =>
-      json.decode(((await rawRequest("/status/sessions")).body as dynamic))[
-          "MediaContainer"];
+  // Future<dynamic> getRawSessions() async =>
+  //     json.decode(((await rawRequest("/status/sessions")).body as dynamic))[
+  //         "MediaContainer"];
 
-  Future<dynamic> getRawLibrary() async => json.decode(
-      ((await rawRequest("/library")).body as dynamic))["MediaContainer"];
+  // Future<dynamic> getRawLibrary() async => json.decode(
+  //     ((await rawRequest("/library")).body as dynamic))["MediaContainer"];
 
-  Future<dynamic> getRawLibrarySections() async =>
-      json.decode(((await rawRequest("/library/sections")).body as dynamic))[
-          "MediaContainer"];
+  // Future<dynamic> getRawLibrarySections() async =>
+  //     json.decode(((await rawRequest("/library/sections")).body as dynamic))[
+  //         "MediaContainer"];
 
   Uri get requestUri => Uri(
         scheme: "http",
         host: this.host,
-        port: 32400,
+        port: this.port,
       );
 
   Future<http.Response> rawRequest(String route) async => await http.get(

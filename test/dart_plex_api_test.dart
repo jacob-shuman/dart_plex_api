@@ -23,7 +23,8 @@ void main() {
       _headers.setCredentials(_credentials);
 
       _client = PlexClient(
-        host: "192.168.0.17",
+        host: "127.0.0.1",
+        port: 32400,
         credentials: _credentials,
         headers: _headers,
       );
@@ -47,27 +48,31 @@ void main() {
     });
 
     test('Get Raw Root', () async {
-      dynamic response = await _client.getRawRoot();
+      dynamic response = await _client.rawRequest("/");
 
       expect(response, isNotNull);
     });
 
-    test('Get Raw Sessions', () async {
-      dynamic response = await _client.getRawSessions();
-
-      expect(response, isNotNull);
+    test('Get Library', () async {
+      // dynamic response = await _client.library;
     });
 
-    test('Get Raw Library', () async {
-      dynamic response = await _client.getRawLibrary();
+    // test('Get Raw Sessions', () async {
+    //   dynamic response = await _client.getRawSessions();
 
-      expect(response, isNotNull);
-    });
+    //   expect(response, isNotNull);
+    // });
 
-    test('Get Raw Library Sections', () async {
-      dynamic response = await _client.getRawLibrarySections();
+    // test('Get Raw Library', () async {
+    //   dynamic response = await _client.getRawLibrary();
 
-      expect(response, isNotNull);
-    });
+    //   expect(response, isNotNull);
+    // });
+
+    // test('Get Raw Library Sections', () async {
+    //   dynamic response = await _client.getRawLibrarySections();
+
+    //   expect(response, isNotNull);
+    // });
   });
 }
