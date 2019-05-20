@@ -73,27 +73,5 @@ void main() {
 
       expect(response, isNotNull);
     });
-
-    test('Get Library', () async {
-      // dynamic response = await _client.library;
-    });
-
-    // test('Get Raw Sessions', () async {
-    //   dynamic response = await _client.getRawSessions();
-
-    //   expect(response, isNotNull);
-    // });
-
-    // test('Get Raw Library', () async {
-    //   dynamic response = await _client.getRawLibrary();
-
-    //   expect(response, isNotNull);
-    // });
-
-    // test('Get Raw Library Sections', () async {
-    //   dynamic response = await _client.getRawLibrarySections();
-
-    //   expect(response, isNotNull);
-    // });
   });
 }
