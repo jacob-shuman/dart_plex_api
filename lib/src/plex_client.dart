@@ -20,7 +20,10 @@ class PlexClient {
         assert(port != null),
         assert(credentials != null) {
     if (this.headers == null) {
-      this.headers = PlexHeaders.fromCredentials(credentials: this.credentials);
+      this.headers = PlexHeaders.fromCredentials(
+        clientIdentifier: "",
+        credentials: this.credentials,
+      );
     } else {
       this.headers.setCredentials(this.credentials);
     }

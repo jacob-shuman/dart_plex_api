@@ -34,8 +34,8 @@ void main() {
 
     test("Example 1", () async {
       PlexCredentials credentials = PlexCredentials(
-        username: "<USERNAME>",
-        password: "<PASSWORD>",
+        username: _username,
+        password: _password,
       );
 
       PlexHeaders headers = PlexHeaders(
