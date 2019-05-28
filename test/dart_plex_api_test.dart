@@ -99,6 +99,13 @@ void main() {
           expect(sections, isNotNull);
         });
 
+        test("Get All Library Sections", () async {
+          List<PlexObject> sections =
+              await _connection.root.library.sections.all.request();
+
+          expect(sections, isNotNull);
+        });
+
         test("Get Artist Library Section", () async {
           PlexLibrarySectionIndex sections =
               await _connection.root.library.sections.request();
