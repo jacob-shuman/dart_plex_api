@@ -67,8 +67,4 @@ class PlexConnection {
   PlexRootRoute get root => PlexRootRoute(
         connection: this,
       );
-
-  PlexServersRoute get servers => PlexServersRoute(
-        connection: this,
-      );
 }
