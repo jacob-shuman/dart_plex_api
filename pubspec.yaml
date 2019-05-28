@@ -2,6 +2,7 @@ name: dart_plex_api
 version: 0.1.0
 author: Jacob Shuman <jacob.shuman7@gmail.com>
 description: An unofficial wrapper for the plex web api.
+homepage: https://github.com/jacob-shuman/dart_plex_api
 repository: https://github.com/jacob-shuman/dart_plex_api
 
 environment:
