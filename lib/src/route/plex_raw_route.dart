@@ -14,7 +14,7 @@ class PlexRawRoute extends PlexRoute {
         );
 
   @override
-  Future<PlexRawResult> request() async => PlexRawResult.fromJson(
+  Future<PlexRawObject> request() async => PlexRawObject.fromJson(
         connection: this.connection,
         json: (await this.connection.requestJson(route))["MediaContainer"],
       );

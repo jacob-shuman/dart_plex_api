@@ -1,10 +1,10 @@
 import "package:meta/meta.dart";
 import 'package:dart_plex_api/dart_plex_api.dart';
 
-class PlexRawResult extends PlexObject {
+class PlexRawObject extends PlexObject {
   final dynamic props;
 
-  PlexRawResult({
+  PlexRawObject({
     @required PlexConnection connection,
     this.props,
   }) : super(
@@ -12,7 +12,7 @@ class PlexRawResult extends PlexObject {
         );
 
   @override
-  PlexRawResult.fromJson({
+  PlexRawObject.fromJson({
     @required PlexConnection connection,
     @required dynamic json,
   })  : assert(json != null),

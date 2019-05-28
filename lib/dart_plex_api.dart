@@ -8,7 +8,7 @@ export 'src/plex_authorization.dart';
 
 // Object
 export 'src/object/plex_object.dart';
-export 'src/object/plex_raw_result.dart';
+export 'src/object/plex_raw_object.dart';
 export 'src/object/plex_root.dart';
 export 'src/object/plex_server.dart';
 export 'src/object/plex_client.dart';

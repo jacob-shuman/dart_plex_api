@@ -64,7 +64,7 @@ class PlexLibrarySectionRoute extends PlexRoute {
           );
           break;
         default:
-          section = PlexRawResult.fromJson(
+          section = PlexRawObject.fromJson(
             connection: this.connection,
             json: (await this
                 .connection
