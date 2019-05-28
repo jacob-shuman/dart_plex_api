@@ -50,7 +50,7 @@ export 'src/media_type/plex_clip.dart';
 export 'src/media_type/plex_playlist_item.dart';
 
 // Exceptions
-export 'src/exceptions/invalid_credentials_exception.dart';
-export 'src/exceptions/missing_headers_exception.dart';
-export 'src/exceptions/unknown_media_type_exception.dart';
-export 'src/exceptions/unknown_exception.dart';
+export 'src/exception/invalid_credentials_exception.dart';
+export 'src/exception/missing_headers_exception.dart';
+export 'src/exception/unknown_media_type_exception.dart';
+export 'src/exception/unknown_exception.dart';
