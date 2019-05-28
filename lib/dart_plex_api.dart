@@ -29,6 +29,7 @@ export "src/route/plex_library_route.dart";
 export "src/route/plex_library_section_index_route.dart";
 export "src/route/plex_library_section_route.dart";
 export "src/route/plex_servers_route.dart";
+export "src/route/plex_clients_route.dart";
 
 // Media Types
 export 'src/media_type/plex_media_type.dart';
