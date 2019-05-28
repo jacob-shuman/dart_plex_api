@@ -15,6 +15,16 @@ class PlexRootRoute extends PlexRoute {
         previousPath: this.route,
       );
 
+  PlexServersRoute get servers => PlexServersRoute(
+        connection: this.connection,
+        previousPath: this.route,
+      );
+
+  PlexClientsRoute get clients => PlexClientsRoute(
+        connection: this.connection,
+        previousPath: this.route,
+      );
+
   @override
   Future<PlexRoot> request() async => PlexRoot.fromJson(
         connection: this.connection,
