@@ -119,6 +119,22 @@ void main() {
           expect(artistSection, isNotNull);
         });
       });
+
+      group("Servers -> ", () {
+        test("Get Servers", () async {
+          List<PlexServer> servers = await _connection.root.servers.request();
+
+          expect(servers, isNotNull);
+        });
+      });
+
+      group("Clients -> ", () {
+        test("Get Clients", () async {
+          List<PlexClient> clients = await _connection.root.clients.request();
+
+          expect(clients, isNotNull);
+        });
+      });
     });
   });
 }
