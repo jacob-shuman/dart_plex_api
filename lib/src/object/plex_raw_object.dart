@@ -21,9 +21,6 @@ class PlexRawObject extends PlexObject {
           connection: connection,
         );
 
-  // TODO: manually add each property to dynamic result
   @override
-  Map<String, dynamic> toJson() => {
-        "props": this.props,
-      };
+  Map<String, dynamic> toJson() => this.props;
 }
