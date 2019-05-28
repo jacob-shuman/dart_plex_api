@@ -10,7 +10,7 @@ main() async {
     clientIdentifier: "Plex Dart Client",
   );
 
-  PlexClient client = await PlexClient(
+  PlexConnection connection = await PlexConnection(
     host: "127.0.0.1",
     port: 32400,
     credentials: credentials,
@@ -18,5 +18,5 @@ main() async {
   ).authorize();
 
   // Returns an http [Response] object
-  await client.rawRequest("/");
+  await connection.requestRaw("/");
 }
