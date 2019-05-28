@@ -1,8 +1,10 @@
+import "dart:convert";
+
 import "package:meta/meta.dart";
 import "package:http/http.dart" as http;
 import "package:dart_plex_api/dart_plex_api.dart";
 
-class PlexClient {
+class PlexConnection {
   PlexAuthorization _auth;
 
   String host;
@@ -11,7 +13,7 @@ class PlexClient {
   PlexHeaders headers;
 
   // TODO: Hash Password
-  PlexClient({
+  PlexConnection({
     @required this.host,
     @required this.port,
     @required this.credentials,
@@ -34,7 +36,7 @@ class PlexClient {
     );
   }
 
-  Future<PlexClient> authorize() async {
+  Future<PlexConnection> authorize() async {
     dynamic user = await this._auth.authorize();
 
     this.headers.token = user["authToken"] ?? user["authentication_token"];
@@ -50,8 +52,23 @@ class PlexClient {
         port: this.port,
       );
 
-  Future<http.Response> rawRequest(String route) async => await http.get(
+  Future<dynamic> requestJson(String route) async =>
+      json.decode((await http.get(
         requestUri.replace(path: route),
         headers: this.headers.toMap(),
+      ))
+          .body);
+
+  Future<http.Response> requestRaw(String route) async => await http.get(
+        requestUri.replace(path: route),
+        headers: this.headers.toMap(),
+      );
+
+  PlexRootRoute get root => PlexRootRoute(
+        connection: this,
+      );
+
+  PlexServersRoute get servers => PlexServersRoute(
+        connection: this,
       );
 }
