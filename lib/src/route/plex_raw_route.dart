@@ -1,4 +1,3 @@
-import 'package:dart_plex_api/src/result/plex_raw_result.dart';
 import "package:meta/meta.dart";
 import 'package:dart_plex_api/dart_plex_api.dart';
 

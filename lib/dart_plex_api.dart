@@ -7,19 +7,19 @@ export 'src/plex_headers.dart';
 export 'src/plex_authorization.dart';
 
 // Object
-export 'src/result/plex_object.dart';
-export 'src/result/plex_raw_result.dart';
-export 'src/result/plex_root.dart';
-export 'src/result/plex_server.dart';
-export 'src/result/plex_client.dart';
-export 'src/result/plex_directory.dart';
-export 'src/result/plex_location.dart';
+export 'src/object/plex_object.dart';
+export 'src/object/plex_raw_result.dart';
+export 'src/object/plex_root.dart';
+export 'src/object/plex_server.dart';
+export 'src/object/plex_client.dart';
+export 'src/object/plex_directory.dart';
+export 'src/object/plex_location.dart';
 
 // Library
-export 'src/result/library/plex_library.dart';
-export 'src/result/library/section/plex_library_section_index.dart';
-export 'src/result/library/section/plex_library_section.dart';
-export 'src/result/library/section/plex_artist_section.dart';
+export 'src/object/library/plex_library.dart';
+export 'src/object/library/section/plex_library_section_index.dart';
+export 'src/object/library/section/plex_library_section.dart';
+export 'src/object/library/section/plex_artist_section.dart';
 
 // Route
 export "src/route/plex_route.dart";
